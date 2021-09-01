@@ -46,9 +46,10 @@ describe Oystercard do
           it 'will not touch in if below minimum balance' do
             expect{ subject.touch_in }.to raise_error "Insufficient balance to touch in"
           end
-                   
-    
+          
+             
 
         end
 end
+
 
