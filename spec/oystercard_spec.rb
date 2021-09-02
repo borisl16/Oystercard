@@ -29,7 +29,7 @@ describe Oystercard do
     it 'should touch in' do
       subject.top_up(1)
       subject.touch_in(entry_station)
-      expect(subject.entry_station).to eq(entry_station)
+      expect(subject.journeys.last).to eq(entry_station: entry_station)
     end
 
     it 'will not touch in if below minimum balance' do
@@ -37,6 +37,8 @@ describe Oystercard do
     end
 
     it "can touch out" do
+      subject.top_up(1)
+      subject.touch_in(entry_station)
       subject.touch_out(exit_station)
       expect(subject).not_to be_in_journey
     end
@@ -51,7 +53,7 @@ describe Oystercard do
       subject.top_up(1)
       subject.touch_in(entry_station)
       subject.touch_out(exit_station)
-      expect(subject.exit_station).to eq exit_station
+      expect(subject.journeys.last).to include(exit_station: exit_station)
     end
 
     it 'has an empty list of journeys by default' do
