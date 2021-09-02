@@ -8,7 +8,7 @@ class Oystercard
     def initialize
         @balance = 0
         @limit = 0
-        @in_journey = 0
+        @in_journey = false
     end
 
     def top_up(amount)
@@ -33,9 +33,11 @@ class Oystercard
         @in_journey = false
       end
       
-   
+      private
+
       def deduct(amount)
         @balance -= amount
-    end
+    
+      end
 
 end
