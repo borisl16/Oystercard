@@ -5,19 +5,23 @@ class Journey
 
   def initialize
     @journeys = []
+    @station
   end 
 
   def complete?
   end
 
-  # def finish
-  # end 
-  # private 
+  def fare
+    PENALTY_FARE
+  end
 
+  def finish(station)
+    @station << station
+  end 
   
 
-  # def fare
-  # end 
+  
+ 
 end 
  
 
