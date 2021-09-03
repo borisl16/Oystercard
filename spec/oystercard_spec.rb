@@ -56,16 +56,16 @@ describe Oystercard do
       expect(subject.journeys.last).to include(exit_station: exit_station)
     end
 
-    it 'has an empty list of journeys by default' do
-      expect(subject.journeys).to be_empty
-    end
+    # it 'has an empty list of journeys by default' do
+    #   expect(subject.journeys).to be_empty
+    # end
 
-    it 'stores a journey' do
-      subject.top_up(1)
-      subject.touch_in(entry_station)
-      subject.touch_out(exit_station)
-      expect(subject.journeys).to include journey
-    end
+    # it 'stores a journey' do
+    #   subject.top_up(1)
+    #   subject.touch_in(entry_station)
+    #   subject.touch_out(exit_station)
+    #   expect(subject.journeys).to include journey
+    # end
   end
 end
 
